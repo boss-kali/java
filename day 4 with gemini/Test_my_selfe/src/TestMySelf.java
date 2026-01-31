@@ -12,15 +12,15 @@ public class TestMySelf {
         for (int i = 0 ; i < size; i++) {
             System.out.println("\n --- person " + (i+1) + " ---");
             System.out.print("Type ? ( 1- for Employee - 2- for manager :");
-            int type = input.nextInt();
+            int type = getValidInt();
             input.nextLine();
             System.out.print("name : ");
             String name = input.nextLine();
             System.out.print("Salary: ");
-            double salary = input.nextDouble();
+            double salary = getValidDouble();
             if (type == 2) {
                 System.out.print("Bonus : ");
-                double bonus = input.nextDouble();
+                double bonus = getValidDouble();
                 team[i] = new Manager(name, salary, bonus);
             }else{
                 team[i] = new Employee(name , salary);
@@ -31,6 +31,28 @@ public class TestMySelf {
             team[i].printInfo();
             if( team[i] instanceof Manager) {
                 ((Manager) team[i]).signPaper();
+            }
+        }
+    }
+    public static double getValidDouble() {
+        while (true){
+            try{
+                return input.nextDouble();
+            }
+            catch (Exception e) {
+                System.out.println(" !! enter just numbers");
+                input.next();
+            }
+        }
+    }
+    public static int getValidInt() {
+        while(true){
+            try {
+                return input.nextInt();
+            }
+            catch(Exception e) {
+                System.out.println(" !! enter just numbers");
+                input.next();
             }
         }
     }
