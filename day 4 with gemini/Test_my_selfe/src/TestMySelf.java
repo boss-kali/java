@@ -7,18 +7,31 @@ public class TestMySelf {
         System.out.println("little porject to add employees and managers");
         System.out.println(" ========================================== ");
         System.out.print("How many names you want to enter : ");
-        int list = input.nextInt();
-        Employee[] teamList = new Employee[list];
-        System.out.print(" enter a name :");
-        String enterdName = input.nextLine();
-        input.next();
-        System.out.println("enter the salary : ");
-        double enterdSalary = input.nextDouble();
-        teamList[0] = new Employee(enterdName , enterdSalary);
-        Employee P = (Employee) teamList[0];
-        P.printInfo();
-        for(int i = 0; i < teamList.length; i++){
-
+        int size = input.nextInt();
+        Employee[] team = new Employee[size];
+        for (int i = 0 ; i < size; i++) {
+            System.out.println("\n --- person " + (i+1) + " ---");
+            System.out.print("Type ? ( 1- for Employee - 2- for manager :");
+            int type = input.nextInt();
+            input.nextLine();
+            System.out.print("name : ");
+            String name = input.nextLine();
+            System.out.print("Salary: ");
+            double salary = input.nextDouble();
+            if (type == 2) {
+                System.out.print("Bonus : ");
+                double bonus = input.nextDouble();
+                team[i] = new Manager(name, salary, bonus);
+            }else{
+                team[i] = new Employee(name , salary);
+            }
+        }
+        System.out.println(" Company team ");
+        for(int i = 0; i < team.length; i++) {
+            team[i].printInfo();
+            if( team[i] instanceof Manager) {
+                ((Manager) team[i]).signPaper();
+            }
         }
     }
 }
