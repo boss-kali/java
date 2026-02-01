@@ -9,7 +9,7 @@ public class Car extends Vehicle {
     @Override
     public void printInfo() {
         super.printInfo();
-        System.out.println("Seats: " + seats);
+        System.out.println(" Seats: " + seats);
     }
 
     public void honk() {

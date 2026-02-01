@@ -8,7 +8,7 @@ public class Vehicle {
     }
 
     public void printInfo() {
-        System.out.println("==========");
+        System.out.println("\n==========");
         System.out.print("The brand: " + brand);
         System.out.print(" \t price: " + price);
     }
