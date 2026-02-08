@@ -1,19 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
- */
 package Practical5;
 
-/**
- *
- * @author hp
- */
 public class Q9 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        // TODO code application logic here
+        double num1 = 5, num2 = 6;
+        double result;
+        char op = '/';
+        switch (op) {
+            case '+':
+                result = (num1 + num2);
+                System.out.println(num1 + " + " + num2 + " = " + result);
+                break;
+            case '-' :
+                result = (num1 - num2);
+                System.out.println(num1 + " - " + num2 + " = " + result);
+                break;
+            case '*' :
+                result = num1 * num2;
+                System.out.println(num1 + " * " + num2 + " = " + result);
+                break;
+            case '/' :
+                if(num2 == 0 ){
+                    System.out.println("Cannot divided by Zero \t please try again !!");
+                }else{
+                    result = num1 / num2;
+                    System.out.println(num1 + " + " + num2 + " = " + result);
+                }
+                break;
+            default :
+                System.out.println("Invalid operator !! ");
+                break;
+        }
     }
 }
