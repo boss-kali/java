@@ -18,7 +18,7 @@ public class Practice {
         System.out.println("-------------------------------------------");
         System.out.printf("Loading ... [%s] %d%% %n ", status, progress);
         // هسه راح نكتب الطريقة الاحترافية و الاصح
-        System.out.println("Now the proficinal way to write it ");
+        System.out.println("Now the professional way to write it ");
         // اولا تحدي الفاتورة
         System.out.println();
         System.out.printf("Item: %-10s Total: $%,.2f %n", item, price);
